@@ -308,6 +308,10 @@ var app = angular.module('userRoutes', ['ngRoute'])
                 templateUrl : '/app/views/layout/stats19-20.html'
             })
 
+            .when('/admin',{
+                templateUrl:'admin'
+            })
+
            .otherwise( { redirectTo : '/'});
 
        $locationProvider.html5Mode({
