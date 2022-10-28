@@ -29,6 +29,7 @@ app.use('/api/upload', require('./app/routes/upload.router'));
 app.use('/api/redFlag', require('./app/routes/redFlag.router'));
 app.use('/api/group', require('./app/routes/group.router'));
 app.use('/admin', require('./app/routes/admin.router'));
+app.use('/file', require('./app/routes/file.router'));
 
 app.use(express.static(__dirname + '/public'));
 global.__basedir = __dirname; // Globally Declaring basedir to use in API files

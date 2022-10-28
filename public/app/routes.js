@@ -312,6 +312,10 @@ var app = angular.module('userRoutes', ['ngRoute'])
                 templateUrl:'admin'
             })
 
+            .when('/file',{
+                templateUrl:'/app/views/home.ejs'
+            })
+
            .otherwise( { redirectTo : '/'});
 
        $locationProvider.html5Mode({
