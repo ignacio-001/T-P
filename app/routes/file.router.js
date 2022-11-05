@@ -5,8 +5,9 @@ var path = require('path');
 var XLSX = require('xlsx');
 var multer = require('multer');
 const router = require('express').Router();
+var excelSchema = require("../models/user.model")
 
-//multer
+// multer
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/uploads')
@@ -31,104 +32,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //static folder path
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-//collection schema
-var excelSchema = new mongoose.Schema({
-    student_name : {
-        type : String,
-    },
-    college_id : {
-        type : String,
-        unique : true
-    },
-    passout_batch : {
-        type : String
-    },
-    program : {
-        type : String,
-    },
-    gender : {
-        type : String,
-        default : 'M'
-    },
-    status : {
-        type : String,
-    },
-    contact_no : {
-        type : String,
-    },
-    college_email : {
-        type : String,
-    },
-    alternate_email : {
-        type : String,
-    },
-    degree : {
-        type : String,
-    },
-    department : {
-        type : String,
-    },
-    cgpa : {
-        type : String,
-    },
-    matric_marks : {
-        type : String
-    },
-    matric_board : {
-        type : String
-    },
-    senior_marks : {
-        type : String
-    },
-    senior_board : {
-        type : String
-    },
-    alternate_contact_no : {
-        type : String
-    },
-    address : {
-        type : String
-    },
-    city : {
-        type : String
-    },
-    post_code : {
-        type : String
-    },
-    state : {
-        type : String
-    },
-    country : {
-        type : String
-    },
-    linkedln_link : {
-        type : String
-    },
-    login_otp : {
-        type : String
-    },
-    resume_url : {
-        type : String
-    },
-    password : {
-        type : String
-        //select : false
-    },
-    active : {
-        type : Boolean,
-        default : true
-    },
-    temporarytoken : {
-        type : String,
-    },
-    permission : {
-        type : String,
-        required : true,
-        default: 'student'
-    }
-});
 
-var excelModel = mongoose.model('excelData', excelSchema);
+
+// var excelModel = mongoose.model('excelData', excelSchema);
 
 
 app.get('/file', (req, res) => {
