@@ -24,6 +24,8 @@
     <link href="assets/css/style.min.css" rel="stylesheet">
     <!--Style-->
     <link href="assets/css/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/achiver.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144843888-1"></script>
@@ -54,6 +56,7 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
+        
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <!-- ============================================================== -->
@@ -171,7 +174,9 @@
                     <ul id="sidebarnav">
                         <li ng-show="main.isLoggedIn"> <a class="nav-toggler waves-effect waves-dark" href="/" aria-expanded="false"><i class="ti-home"></i><span class="hide-menu">Home</span></a></li>
                         <li ng-show="!main.isLoggedIn"> <a class="nav-toggler waves-effect waves-dark" href="/login" aria-expanded="false"><i class="icon-login"></i><span class="hide-menu">Login </span></a></li>
+
                         <li ng-show="main.isLoggedIn"> <a class="nav-toggler waves-effect waves-dark" href="/company-registration" aria-expanded="false"><i class="icon-briefcase"></i><span class="hide-menu">Company Registration</span></a></li>
+
                         <li ng-show="main.isLoggedIn"> <a class="nav-toggler waves-effect waves-dark" href="/interview-experiences" aria-expanded="false"><i class="icon-rocket"></i><span class="hide-menu">Interview Experiences </span></a></li>
                         <li ng-show="main.isLoggedIn && main.authorized"> <a class="nav-toggler waves-effect waves-dark" href="/add-new-company" aria-expanded="false"><i class="icon-briefcase"></i><span class="hide-menu">Add New Company</span></a></li>
                         <li ng-show="main.isLoggedIn && main.authorized"> <a class="nav-toggler waves-effect waves-dark" href="/admin-management" aria-expanded="false"><i class="icon-fire"></i><span class="hide-menu">Admin Management</span></a></li>
@@ -191,8 +196,7 @@
                         <li> <a class="nav-toggler waves-effect waves-dark" href="/technical" aria-expanded="false"><i class="icon-screen-desktop"></i><span class="hide-menu">Developer</span></a></li>
                         <li> <a class="nav-toggler waves-effect waves-dark" href="/contact" aria-expanded="false"><i class="icon-phone"></i><span class="hide-menu">Contact Us </span></a></li>
                         <li> <a class="nav-toggler waves-effect waves-dark" href="/placements" aria-expanded="false"><i class="ti-crown"></i><span class="hide-menu">Hall of Fame &nbsp;</span></a></li>
-                        <li> <a class="nav-toggler waves-effect waves-dark" href="/admin" aria-expanded="false"><i class="ti-crown"></i><span class="hide-menu">Admin &nbsp;</span></a></li>
-                        <li> <a class="nav-toggler waves-effect waves-dark" href="/file" aria-expanded="false"><i class="ti-crown"></i><span class="hide-menu">Uplode student details &nbsp;</span></a></li>
+                       <li ng-show="main.isLoggedIn && main.authorized"> <a class="nav-toggler waves-effect waves-dark" href="/file" aria-expanded="false"><i class="icon-briefcase"></i><span class="hide-menu">Upload Student details</span></a></li>
 
                     </ul>
                 </nav>
@@ -289,6 +293,9 @@
     <script src='/assets/js/textAngular/textAngular-sanitize.min.js'></script>
 
     <script src='/assets/js/textAngular/textAngular.min.js'></script>
+
+    <script src="/assets/js/statistics/PlacementComparision.js"></script>
+    <script src="/assets/js/statistics/PlacementStats.js"></script>
 
 
 </body>
