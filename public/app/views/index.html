@@ -77,20 +77,7 @@
         <!--                         
                         <li ng-show="main.isLoggedIn"> <a class="nav-toggler waves-effect waves-dark" href="/company-registration" aria-expanded="false"><i class="icon-briefcase"></i><span class="hide-menu">Company Registration</span></a></li> -->
         <li ng-show="main.isLoggedIn"><a href="/company-registration" aria-expanded="false">Updates</a></li>
-
-            
-        <!-- <li ng-show="main.isLoggedIn && !main.authorized">
-            <a href="javascript:void(0)" aria-expanded="false">User Profile</a>
-            <ul aria-expanded="false">
-                <li><a href="/profile">Profile Page </a></li>
-                <li><a href="/red-flag-history">Red Flag History </a></li>
-                <li><a href="/timeline">Timeline </a></li>
-                <li><a href="/notifications">Notifications </a></li>
-                <li><a href="/achieng-show=" main.isLoggedIn && !main.authorized"vement">Achievement </a></li>
-                <li><a href="/contributions">Contributions </a></li>
-                <li><a href="/settings">Account Settings </a></li>
-            </ul>
-        </li> -->
+        
 
         <li><a href="/team" aria-expanded="false">Team</a></li>
         <li><a href="/technical" aria-expanded="falCompany Registrationse">Developer</a></li>
@@ -100,9 +87,9 @@
         <li><a href="/interview-experiences" aria-expanded="false" ng-show="main.isLoggedIn">Interview Experiences</a></li>
         <li ng-show="main.isLoggedIn && main.authorized"> <a href="/file" aria-expanded="false">Upload Student
                 details</a></li>
+        <li><a href="/filter-management" aria-expanded="false" ng-show="main.isLoggedIn">Filter Management</a></li>
 
 
-        <!-- <li ng-show="main.isLoggedIn">
             <a href="#">{{ main.student_name }}</a>
             <ul>
                 <li><a href="#"> {{ main.permission}} </a></li>
@@ -144,8 +131,8 @@
         </li>
 
         
-        <li ng-show="main.isLoggedIn"><a href="#" ng-click="main.logout();">Logout</a></li>
-        <li ng-show="!main.isLoggedIn"><a href="/login" aria-expanded="false">Log In</a></li>
+        <!-- <li ng-show="main.isLoggedIn"><a href="#" ng-click="main.logout();">Logout</a></li>
+        <li ng-show="!main.isLoggedIn"><a href="/login" aria-expanded="false">Log In</a></li> -->
     </ul>
 
 
