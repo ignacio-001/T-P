@@ -6,11 +6,10 @@
 
 </div>
 
-<div class="row">
-    <div class="col-12">
-        <button class="btn btn-block btn-primary btn-rounded" data-toggle="modal" data-target="#addCompanyNotificationModal"><i class="ti-bell"></i> &nbsp; Add New Notification</button>
-    </div>
-</div>
+<!-- <div style="display: flex;">
+        <button class="btn btn-block btn-primary btn-rounded m-2" data-toggle="modal" data-target="#addCompanyNotificationModal"><i class="ti-bell"></i> &nbsp; Add New Notification</button>
+        <button class="btn btn-block btn-primary btn-rounded m-2"><i class="ti-bell"></i> &nbsp; <a href="/add-new-company" style="color: white;">Add new company</a></button>
+</div> -->
 
 
 <!--All Announcements -->
@@ -18,11 +17,68 @@
     <div class="card">
         <div class="card-body">
 
+            <form ng-submit="companyNotification.sendNotification(notificationData)">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="addCompanyNotificationModalHeader">Send Notification To Students</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                </div>
+
+                <!-- Confirm Notification -->
+                <div class="modal-body" ng-show="confirmNotification">
+                    <div class="form-group">
+                        <label class="control-label">Title</label>
+                        <p>{{ notificationData.title }}</p>
+                    </div>
+
+                    <!-- Description   -->
+                    <div class="form-group">
+                        <label class="control-label">Description</label>
+                        <p>{{ notificationData.description }}</p>
+                    </div>
+                    <!-- SPAN  -->
+                    <span class="text-primary">**This notification will be sent to all registered students!</span>
+
+                    <!-- Loading Message -->
+                    <div class="alert alert-primary alert-rounded" ng-show="companyNotification.postingNotificationLoading">
+                        <strong> Loading!</strong> Hold on. sending notification...
+                    </div>
+
+                    <!-- Error Message -->
+                    <div class="alert alert-danger alert-rounded" ng-show="companyNotification.errorMsg">
+                        <strong>Oops! </strong> {{ companyNotification.errorMsg }}
+                    </div>
+                </div>
+
+                <!-- Notification Inputs -->
+                <div class="modal-body" ng-show="!confirmNotification">
+                    <div class="form-group">
+                        <label class="control-label">Title</label>
+                        <input type="text" class="form-control" placeholder="Write title here..." ng-model="notificationData.title">
+                    </div>
+
+                    <!-- Description   -->
+                    <div class="form-group">
+                        <label class="control-label">Description</label>
+                        <textarea type="text" class="form-control" placeholder="Write description here..." rows="4" ng-model="notificationData.description" required></textarea>
+                    </div>
+                    <div style="display: flex;">
+                        <button type="buttom" class="btn btn-block btn-success btn-rounded m-2">Submit</button>
+                         <button type="button" class="btn btn-default btn-block btn-rounded" data-dismiss="modal">Close</button>
+                        </div>
+                </div>
+
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="buttom" class="btn btn-block btn-success btn-rounded m-2">Submit</button>
+                </div> -->
+            </form>
+
+
             <!-- If More then 0 notification in database -->
-            <div>
+            <!-- <div>
                 <h5 class="card-title">Notifications History</h5>
                 <h6 class="card-subtitle">check out personalized notification history for this company</h6>
-            </div>
+            </div> -->
 
             <!-- All Announcements -->
             <div class="m-t-40">
